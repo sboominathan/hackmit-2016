@@ -16,6 +16,12 @@ router.post('/find-video', function(req, res, next) {
   var s = req.body.url;
   // console.log(req.body.url)
   console.log(s);
+  var pyshell = new pythonShell('./routes/my_script.py');
+  pyshell.on('message', function (message) {
+  // received a message sent from the Python script (a simple "print" statement)
+	  console.log(message);
+	}); 
 });
+
 
 module.exports = router;
