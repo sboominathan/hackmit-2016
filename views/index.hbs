@@ -15,7 +15,16 @@
 </head>
 
 <body>
-  Welcome to Express!
+  <br />
+  <br />
+  <form action="/find-video" method="post" enctype="multipart/form-data">
+         <fieldset>
+            <label for="name">YouTube URL:</label>
+            <input type="text" id="url" name="url" placeholder="Enter the video URL" />
+            <input type = "submit" value = "Get Video" />
+         </fieldset>
+    </form>
+    <p> Video Found: {{video_name}} </p>
 </body>
 
 
