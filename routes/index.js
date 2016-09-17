@@ -14,7 +14,6 @@ router.get('/', function(req, res, next) {
 router.post('/find-video', function(req, res, next) {
   res.render('index', { video_name: 'Obama speech' });
   var s = req.body.url;
-  // console.log(req.body.url)
   console.log(s);
   var pyshell = new pythonShell('./routes/my_script.py');
   pyshell.on('message', function (message) {
