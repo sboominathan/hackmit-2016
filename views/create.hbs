@@ -22,11 +22,6 @@
 
   <div class="container">
   <div class="row">
-    {{#each words}}
-    <button class="word-button">
-       {{this}}
-    </button>
-    {{/each}}
 
   	<div class="col-md-6 centered">
   	<form action="/create/submit-text" method="post">
@@ -36,6 +31,12 @@
             <input type = "submit" value = "Get Video" />
          </fieldset>
     </form>
+
+    {{#each words}}
+    <button class="btn btn-primary word-button">
+       {{this}}
+    </button>
+    {{/each}}
     </div>
   </div>
   </div>
