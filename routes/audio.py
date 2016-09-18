@@ -2,12 +2,12 @@ from moviepy.editor import VideoFileClip, concatenate_videoclips
 import moviepy
 import random
 
-def wordsToTimes(input, word_bank, video):
+def wordsToTimes(input, word_dict, video):
 	clips = []
 	for word in input.split(" "):
 		if word not in word_bank:
 			continue
-		times = word_bank[word]
+		times = word_dict[word]
 		random_time = random.choice(times)
 		start_time = random_time["start"]
 		end_time = random_time["end"]
