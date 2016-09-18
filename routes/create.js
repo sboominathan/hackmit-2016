@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 var pythonShell = require('python-shell');
 
+
+router.use(bodyParser.json()); // for parsing application/json
+router.use(bodyParser.urlencoded({ extended: true }));
+
 router.get('/', function(req, res, next) {
   res.render('create');
 });
@@ -28,6 +32,9 @@ router.post('/submit-text', function(req, res, next) {
   	// if(err) {throw err;}
   	res.render('result')
   });
+  
+  console.log(req.body);
+  console.log(req.body.words);
 
 });
 
