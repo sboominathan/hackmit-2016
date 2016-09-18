@@ -17,14 +17,24 @@
 <body>
   <br />
   <br />
-  <form action="/find-video" method="post">
+
+  <div class="container">
+  <div class="row">
+  	<div class="col-md-6 centered">
+  	<form action="/find-video" method="post">
          <fieldset>
             <label for="name">YouTube URL:</label>
             <input type="text" id="url" name="url" placeholder="Enter the video URL" />
             <input type = "submit" value = "Get Video" />
          </fieldset>
     </form>
-    <p> Video Found: {{video_name}} </p>
+    </div>
+  </div>
+  <div>
+   <p> Video Found: {{video_name}} </p>
+  </div>
+  </div>
+
 </body>
 
 
