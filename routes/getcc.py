@@ -25,4 +25,5 @@ def getcc(url):
 
             times = {"start time": start_time, "duration": dur_time}
             captions.append({'times':times,'line':text})
+
     return captions
