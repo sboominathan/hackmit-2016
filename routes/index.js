@@ -4,6 +4,7 @@ var pythonShell = require('python-shell');
 var bodyParser = require('body-parser');
 var watson = require('watson-developer-cloud');
 var fs = require('fs');
+var jsonfile = require('jsonfile')        
 
 router.use(bodyParser.json()); // for parsing application/json
 router.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -44,15 +45,22 @@ router.post('/find-video', function(req, res, next) {
 	//       console.log(JSON.stringify(transcript, null, 2));
 	//   });
 	// }
+
+  var options = {
+  mode: 'text',
+  scriptPath: './routes/',
+  args: ['1']
+};
 	
   var input_url = req.body.url;
   console.log(input_url);
-  var pyshell = new pythonShell('./routes/my_script.py');
-  pyshell.send(input_url);
-  pyshell.on('message', function (message) {
+  // var pyshell = new pythonShell('./routes/my_script.py');
+  // pyshell.send(input_url);
+  // pyshell.on('message', function (message) {
+  pythonShell.run('my_script.py', options, function (err, results) {
   // received a message sent from the Python script (a simple "print" statement)
-  	console.log(message);
-    if(message=="finished1"){
+  	// console.log(message);
+    // if(message=="finished1"){
       console.log("watson begin");
       var files = ['audio1.wav'];
       for (var file in files) {
@@ -60,7 +68,6 @@ router.post('/find-video', function(req, res, next) {
           audio: fs.createReadStream(files[file]),
           content_type: 'audio/wav',
           timestamps: true,
-          word_alternatives_threshold: 0.9,
           continuous: true
         };
 
@@ -70,16 +77,22 @@ router.post('/find-video', function(req, res, next) {
           else
             console.log("Done")
             console.log(JSON.stringify(transcript, null, 2));
+ 
+            var file = 'data.json'
+            
+            jsonfile.writeFile(file, transcript, function (err) {
+              console.error(err)
+            })
         });
       }
-    }
+    res.render('create', { words: ["message","message1","message2","message3"] });
+    // }
 	}); 
   
 
   pyshell.end(function (err) {
   // if (err) {throw err;}
   console.log('finished');
-  res.render('index', { video_name: "message" });
 	});
 
 });

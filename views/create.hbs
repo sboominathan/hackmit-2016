@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Super Cut</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,900' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="js/create.js"></script>
+  
+</head>
+
+<body>
+  <br />
+  <br />
+
+  <div class="container">
+  <div class="row">
+    {{#each words}}
+    <button id="word-button">
+      {{@index}}: {{this}}
+    </button>
+      
+    {{/each}}
+  	<div class="col-md-6 centered">
+  	<form action="/submit-text" method="post">
+         <fieldset>
+            <label for="name">Your script:</label>
+            <input type="text" id="words" name="words" placeholder="Build shit" />
+            <input type = "submit" value = "Get Video" />
+         </fieldset>
+    </form>
+    </div>
+  </div>
+  </div>
+
+</body>
+
+
+
+</html>

@@ -3,8 +3,8 @@ import moviepy.editor as mp
 import sys
 
 # # note, we seem to be using python 2.x
-url = raw_input()
-# url = "https://www.youtube.com/watch?v=A7kVSDbHc3E"
+# url = raw_input()
+url = "https://www.youtube.com/watch?v=A7kVSDbHc3E"
 video = pafy.new(url)
 
 # # print video.title
