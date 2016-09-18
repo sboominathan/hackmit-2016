@@ -21,8 +21,8 @@ router.get('/', function(req, res, next) {
 router.post('/find-video', function(req, res, next) {
 
   var speech_to_text = watson.speech_to_text({
-	  password: 'Rwr11qbjSOGC',
-	  username: 'a31c12a3-3a06-43f5-8af6-a6ce8c370537',
+	  password: 's',
+	  username: 's',
 	  version: 'v1'
 	});
 
