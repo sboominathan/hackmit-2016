@@ -42,14 +42,21 @@ router.post('/find-video', function(req, res, next) {
 	  });
 	}
 	
-  res.render('index', { video_name: 'Obama speech' });
-  var s = req.body.url;
-  console.log(s);
+  var input_url = req.body.url;
+  console.log(input_url);
   var pyshell = new pythonShell('./routes/my_script.py');
+  pyshell.send(input_url);
   pyshell.on('message', function (message) {
   // received a message sent from the Python script (a simple "print" statement)
-	  console.log(message);
+  	console.log(message);
+  	res.render('index', { video_name: message });
+
 	}); 
+
+  pyshell.end(function (err) {
+  if (err) throw err;
+  console.log('finished');
+	});
 
 });
 
