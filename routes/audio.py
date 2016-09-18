@@ -23,12 +23,12 @@ for word in input1.split(" "):
 		continue
 	times = word_dict[word]
 	random_time = random.choice(times)
-	start_time = random_time["start"]
-	end_time = random_time["end"]
+	start_time = random_time["start"]-.05
+	end_time = random_time["end"]+.05
 	clip = VideoFileClip(video).subclip(start_time, end_time)
 	clips.append(clip)
 final_clip = concatenate_videoclips(clips)
-final_clip.write_videofile("results.mp4")
+final_clip.write_videofile("public/results.mp4")
 
 # def test():
 # 	input = ["good", "executing", "i", "like", "you", "thank", "you"]
