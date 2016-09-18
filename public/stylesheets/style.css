@@ -24,7 +24,6 @@ a {
 
 /*.video-block{}*/
 
-
 input[type=text] {
   height:100%;
   font-size: 20px;
@@ -41,6 +40,14 @@ input[type=text]:focus {
   box-shadow:  0px 5px 0px 0px #4EA6EA,  0px 5px 0px 0px #4EA6EA;
 }
 
+#clip {
+	position: absolute;
+	margin-left: -175px;
+	margin-top: 20px ;
+	width:100px !important;
+	height:100px !important;
+}
+
 .center-home {
     padding-top: 5%;
 }
@@ -54,6 +61,7 @@ input[type=text]:focus {
 	font-family: 'Exo', sans-serif;
 	font-size: 100px;
 	font-weight: 300;
+	margin-left: 95px;
 }
 
 .row {

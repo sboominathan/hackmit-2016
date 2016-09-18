@@ -13,6 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
   <script src = "/javascripts/create.js"></script>
+  <link rel="stylesheet" href="/stylesheets/create.css">
   
 </head>
 
@@ -23,21 +24,23 @@
   <div class="container">
   <div class="row">
 
-  	<div class="col-md-6 centered">
+  	<div class="col-md-6 col-md-offset-3">
   	<form action="/create/submit-text" method="post">
          <fieldset>
-            <label for="name">Your script:</label>
-            <input type="text" id="words" name="words" placeholder="Build shit" />
-            <input type = "submit" value = "Get Video" />
+            <input type="text" id="words" name="words" placeholder="Your script goes here!" />
+            <div class="row">
+            <button type = "submit" class="btn btn-primary"/>Get Video</button>
+            </div>
          </fieldset>
     </form>
-
     {{#each words}}
-    <button class="btn btn-primary word-button">
+    <button class="btn btn-secondary word-button">
        {{this}}
     </button>
     {{/each}}
     </div>
+
+
   </div>
   </div>
 
