@@ -12,7 +12,7 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-  <script type="text/javascript" src="js/create.js"></script>
+  <script src = "/javascripts/create.js"></script>
   
 </head>
 
@@ -23,13 +23,13 @@
   <div class="container">
   <div class="row">
     {{#each words}}
-    <button id="word-button">
-      {{@index}}: {{this}}
+    <button class="word-button">
+       {{this}}
     </button>
     {{/each}}
-    
+
   	<div class="col-md-6 centered">
-  	<form action="/submit-text" method="post">
+  	<form action="/create/submit-text" method="post">
          <fieldset>
             <label for="name">Your script:</label>
             <input type="text" id="words" name="words" placeholder="Build shit" />
