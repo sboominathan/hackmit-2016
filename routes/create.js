@@ -26,6 +26,7 @@ router.post('/submit-text', function(req, res, next) {
 
   pyshell.end(function (err) {
   	// if(err) {throw err;}
+  	res.render('result')
   });
 
 });
