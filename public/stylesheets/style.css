@@ -1,8 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:900);
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
 }
 
 a {
   color: #00B7FF;
+}
+
+.heading-home {
+    padding-top: 5%;
+}
+
+.button-row {
+	padding-top: 20px;
+}
+
+.form-inline {
+	text-align: center;
+	height: 40px;
+}
+
+
+
+input[type=text] {
+  height:100%;
+  font-size: 20px;
+  text-align: center;
+  border: 0;
+  width: 80%;
+  margin-left:1px;
+  box-shadow: 0px 5px 0px 0px #ebebeb, 0px 5px 0px 0px #ebebeb;
+  -webkit-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+}
+input[type=text]:focus {
+  outline: none;
+  box-shadow:  0px 5px 0px 0px #4EA6EA,  0px 5px 0px 0px #4EA6EA;
+}
+
+.center-home {
+    padding-top: 5%;
+}
+
+@media (min-width: 992px)
+.col-md-12 {
+    width: 100%;
+}
+
+.title {
+	font-family: 'Exo', sans-serif;
+	font-size: 100px;
+	font-weight: 300;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
 }
