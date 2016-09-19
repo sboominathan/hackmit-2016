@@ -1,0 +1,14 @@
+.word-button{
+	margin: 5px;
+}
+
+.btn-primary{
+	margin: 5px;
+}
+
+#words{
+	height:100px;
+	padding: 0px;
+	width:300px;
+	line-height: 20px;
+}
